@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <title>About</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="jquery-circle-progress"></script>
   <style media="screen">
 
   .container {
@@ -11,13 +13,14 @@
     height: 600px;
     padding-left: 10%;
     padding-right: 10%;
+    margin-top: 170px;
   }
   .Artical{
     /*width:40%;*/
     float:left;
     text-wrap:break-word;
-    width: 500px;
-  }
+    width: 500px;  }
+
 
   .art_image{
     /*width: 55%;*/
@@ -35,6 +38,26 @@
     margin-left: 220px;
 
   }
+  .Topnav a{
+    color: gray;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: 'Lato',sans-serif;
+  }
+
+  .Topnav{
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size:contain;
+    padding: 20px;
+    word-spacing: 50px;
+    color: rgba(, 0, 0, 0,.6);
+    position: fixed;
+    width: 95%;
+    top: 0;
+  }
+
+
 
   .container table{
     float: left;
@@ -56,32 +79,177 @@
   }
 
   .counter {
-  display: table-cell;
-  margin:1.5%;
-  font-size:50px;
-  background-color: #FF6F6F;
-  width:200px;
-  border-radius: 50%;
-  height:200px;
-  vertical-align: middle;
+    font-size: 20px;
+  }
+
+  .circle {
+   width: 50px;
+   margin: 6px 20px 20px;
+   display: inline-block;
+   position: relative;
+   text-align: center;
+
+ }
+ /*this is the text*/
+ strong {
+   position: absolute;
+   top: 30px;
+   left: 45px;
+   width: 70px;
+   text-align: center;
+   line-height: 45px;
+   font-size: 30px;
+   color:white;
+   padding-top: 50px;
+ }
 }
+/*styling for the timer*/
+.timer{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-rows: 1fr;
+ grid-gap: 50px;
+ width: 1150px;
+ height: 250px;
+ background-color: black;
+ padding-top: 140px;
+ padding-left: 150px;
+
+}
+
+.timer div{
+ width: 150px;
+ height:150px;
+ padding-top: 50px;
+
+}
+
+.div_timer{
+ background-color: black;
+ width: 100%;
+ height: 250px;
+ padding-left: 290px;
+}
+
+  .Subscribe{
+    float: right;
+    width: 50%;
+    margin-left: 30%;
+  }
+  #carousel_ul {
+    position: relative;
+    left: -210px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width: 9999px;
+    padding-bottom: 10px;
+  }
+
+  #carousel_inner{
+    position: relative;
+    /*width: 200%;*/
+    /*height: 120px;*/
+    list-style-type: disc;
+    overflow: hidden;
+    display: inline-flex;
+  }
+
+  #carousel_inner li{
+    /*width: 100%;*/
+    float: left;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+
+  }
+
+  #carousel_ul li {
+    float: left;
+    width: 200px;
+    padding: 0px;
+    height: 110px;
+    background: #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  #carousel_ul li img {
+    margin-bottom: -4px;
+    cursor: pointer;
+    cursor: hand;
+    border: 0px;
+  }
+
+  #left_scroll, #right_scroll {
+    float: left;
+    height: 130px;
+    width: 35px;
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+
+  #left_scroll img, #right_scroll img {
+    border: 0;
+    cursor: pointer;
+    cursor: hand;
+  }
+
+  #left_scroll img {
+    width: 25px;
+    height: 25px;
+  }
+
+  #right_scroll img {
+    width: 25px;
+    height: 25px;
+  }
+  #carousel_container{
+    width: 100%;
+    float: left;
+  }
+  button{
+    background-color: none;
+    color: grey;
+    text-align: center;
+    font-size: 18px;
+    width: 130px;
+    height: 50px;
+    border-radius: 8%;
+    margin-left: 35%;
+    margin-top: 15px;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+
+  }
+  button:hover {
+    width: 150px;
+  }
+
 
   </style>
 </head>
 <body>
+  <!--top navbar  -->
 
   <div class="wrapper">
     <div class="Topnav">
       <img src="http://code4ct.com/wp-content/uploads/2016/06/code4ct-logo-1.jpg" alt="">
 
-      <div class="box a"><a class="home" href="#"/target="_self">Home</a>
-        <a class="about" href="About.html"/target="_self">About</a>
-        <a class="news" href="Service.html"/target="_self">service</a>
+      <div class="box a">
+        <a class="home" href="Home.html"/target="_self">Home</a>
+        <a class="courses" href="Courses.html"/target="_self">Courses</a>
+        <a class="about" href="#"/target="_self">About</a>
+        <a class="Portfolio"a href="Portfolio.html"/target="_self">Portfolio</a>
         <a class="contact"a href="Contact.html"/target="_self">Contact</a>
         <input type="text" name="" placeholder="Search"></div>
 
       </div>
     </div>
+    <!--end of top nav bar-->
+
+    <!--about the company-->
 
     <div class="container">
       <div class="Artical">
@@ -93,6 +261,10 @@
         <img src="http://code4ct.com/wp-content/uploads/2017/11/Code-Camp-2015-STEM-Pilot-Girls-1.jpg" alt=""width="420px" height="400px">
       </div>
     </div>
+
+    <!--end about the company-->
+
+    <!--table of company Vision statement -->
 
     <div class="container">
       <div id="Vision_image">
@@ -118,9 +290,11 @@
           The success of our work depends on the support of likeminded individuals and companies who come alongside us to work towards our mission.
           Find out how you can support our work as a company or individual</div>
 
-
-
         </table>
+
+        <!--end table of company Vision statement-->
+
+        <!--table of meet our team -->
 
       </div>
     </div>
@@ -174,7 +348,109 @@
         </tr>
       </table>
 
+      <!--end of meet our team table-->
 
+      <!--Html of count up counter-->
+
+      <div class="div_timer">
+
+     <section class="timer">
+
+       <div class="circle" id="circle-a">
+         <strong>85%</strong>
+         <h3>Web Design</h3>
+       </div>
+
+       <div class="circle" id="circle-b">
+         <strong>80%</strong>
+         <h3>Branding</h3>
+       </div>
+
+       <div class="circle" id="circle-c">
+         <strong>90%</strong>
+         <h3>Photography</h3>
+       </div>
+
+       <div class="circle" id="circle-d">
+         <strong>97%</strong>
+         <h3>Print Design</h3>
+       </div>
+
+     </section>
+
+   </div>
+
+      <!--end Html of count up counter-->
+
+
+
+      <!--Subcribe section of the page -->
+
+      <div class="Subscribe">
+        <div id="Submit">
+          <center><h3>Subscribe to us</h3>
+            <p>Sign up for our newsletter</p>
+            <form>
+              <input type="text" name="" value=""placeholder="enter your email">
+              <button>Submit</button>
+            </center>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- end Subcribe section of the page -->
+
+      <!--start of carousel section-->
+
+      <div id='carousel_container'>
+        <div id='carousel_inner'>
+          <ul id='carousel_ul'>
+            <li>
+              <a href='#'>
+                <img src='Images\Logos\deloitte-logo._360.jpg'/>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <img src='Images\Logos\lwandlelogo._360.jpg'/>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <img src='Images\Logos\mazars-logo._360.jpg'/>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <img src='Images\Logos\mobenzi_logo._360.jpg'/>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <img src='Images\Logos\openboxlogo._360.jpg'/>
+              </a>
+              <a href='#'>
+                <img src='Images\Logos\takealot-logo._360.jpg'/>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <img src='Images\Logos\tns-logo._360.jpg'/>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <img src='Images\Logos\45_case_study_logos_11_csg._360.jpg'/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--end of carousel section-->
+
+      <!--page footer-->
 
       <div class="container">
 
@@ -220,33 +496,144 @@
       </div>
 
 
-<script type="text/javascript">
-$('.counter').each(function() {
-  var $this = $(this),
-      countTo = $this.attr('data-count');
+      <script type="text/javascript">
 
-  $({ countNum: $this.text()}).animate({
-    countNum: countTo
-  },
+      var progressBarOptions = {
+     startAngle: -1.55,
+     size: 100,
+     value: 0.85,
+     fill: {
+       color: 'red'
+     }
+   }
+   $('.timer').mouseover(function() {
+     $('#circle').circleProgress(progressBarOptions).on('circle-animation-progress', function(event, progress, stepValue) {
+     });
 
-  {
+     $('#circle-b').circleProgress({
+       value : 0.80,
+       fill: {
+         color: 'red'
+       }
+     });
 
-    duration: 8000,
-    easing:'linear',
-    step: function() {
-      $this.text(Math.floor(this.countNum));
-    },
-    complete: function() {
-      $this.text(this.countNum);
-      //alert('finished');
-    }
+     $('#circle-c').circleProgress({
+       value : 0.90,
+       fill: {
+         color: 'red'
+       }
+     });
 
-  });
+     $('#circle-d').circleProgress({
+       value : 0.97,
+       fill: {
+         color: 'red'
+       }
+     });
+   });
+
+      // $('#circle').circleProgress({
+      //   value: 0.75,
+      //   size: 80,
+      //   fill: {
+      //     gradient: ["red", "orange"]
+      //   }
+      // });
+
+      $(document).ready(function() {
+
+        //options( 1 - ON , 0 - OFF)
+        var auto_slide = 1;
+        var hover_pause = 1;
+        var key_slide = 1;
+
+        //speed of auto slide(
+        var auto_slide_seconds = 0;
 
 
 
-});
+        /*move the last list item before the first item. The purpose of this is
+        if the user clicks to slide left he will be able to see the last item.*/
+        $('#carousel_ul li:first').before($('#carousel_ul li:last'));
 
-</script>
+        //check if auto sliding is enabled
+        if(auto_slide == 1){
+          /*set the interval (loop) to call function slide with option 'right'
+          and set the interval time to the variable we declared previously */
+          var timer = setInterval('slide("right")', auto_slide_seconds);
+
+          /*and change the value of our hidden field that hold info about
+          the interval, setting it to the number of milliseconds we declared previously*/
+          $('#hidden_auto_slide_seconds').val(auto_slide_seconds);
+        }
+
+        //check if hover pause is enabled
+        if(hover_pause == 1){
+          //when hovered over the list
+          $('#carousel_ul').hover(function(){
+            //stop the interval
+            clearInterval(timer)
+          },function(){
+            //and when mouseout start it again
+            timer = setInterval('slide("right")', auto_slide_seconds);
+          });
+
+        }
+
+        //check if key sliding is enabled
+        if(key_slide == 1){
+
+          //binding keypress function
+          $(document).bind('keypress', function(e) {
+            //keyCode for left arrow is 37 and for right it's 39 '
+            if(e.keyCode==37){
+              //initialize the slide to left function
+              slide('left');
+            }else if(e.keyCode==39){
+              //initialize the slide to right function
+              slide('right');
+            }
+          });
+
+        }
+
+      });
+
+
+      function slide(where){
+
+
+        var item_width = $('#carousel_ul li').outerWidth() + 10;
+
+
+        if(where == 'left'){
+          //...calculating the new left indent of the unordered list (ul) for left sliding
+          var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
+        }else{
+          //...calculating the new left indent of the unordered list (ul) for right sliding
+          var left_indent = parseInt($('#carousel_ul').css('left')) - item_width;
+
+        }
+
+        //make the sliding effect using jQuery's animate function... '
+        $('#carousel_ul:not(:animated)').animate({'left' : left_indent},3000,function(){
+
+          /* when the animation finishes use the if statement again, and make an ilussion
+          of infinity by changing place of last or first item*/
+          if(where == 'left'){
+            //...and if it slided to left we put the last item before the first item
+            $('#carousel_ul li:first').before($('#carousel_ul li:last'));
+          }else{
+            //...and if it slided to right we put the first item after the last item
+            $('#carousel_ul li:last').after($('#carousel_ul li:first'));
+          }
+
+          //...and then just get back the default left indent
+          $('#carousel_ul').css({'left' : '-210px'});
+        });
+
+      }
+
+      </script>
     </body>
     </html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Courses</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style media="screen">
+  .container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .header {
+    overflow: hidden;
+    height: 65px;
+  }
+
+  .header a {
+    color: inherit;
+  }
+
+  .header a:hover {
+    font-weight: bold;
+  }
+
+  .header-logo {
+    float: left;
+  }
+
+  .header-nav {
+    float: right;
+  }
+  li {
+    color: white;
+  }
+  .header-nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 310px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: lightgrey;
+  }
+
+
+  .product span {
+    font-weight: bold;
+  }
+
+  .product-image img {
+    display: block;
+    max-width: 228px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .
+  .row .product:last-child {
+    margin-right: 0;
+  }
+
+  .product-add-to-cart {
+    overflow: hidden;
+    clear: both;
+    margin-top: 10px;
+  }
+
+  .see-more {
+    float: left;
+    background: lightgrey;
+    color: lightgrey;
+  }
+
+  .add-to-cart {
+    float: right;
+  }
+
+  .shopping-cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    margin-right: 20px;
+    margin-top: 100px;
+    padding: 20px;
+    background:  rgba(0, 0, 0, 0.5);
+  }
+
+  .shopping-cart-head {
+    background: #e38f84 ;
+    color: white;
+    padding: 5px;
+  }
+
+  .shopping-cart,
+  .shopping-cart-head {
+    border-radius: 5px;
+  }
+
+  .empty-cart-btn,
+  .cart-checkout {
+    display: none;
+
+  }
+
+  .empty-cart-btn {
+    margin-bottom: 5px;
+  }
+
+  .cart-checkout {
+    background: limegreen;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="Topnav">
+      <img src="http://code4ct.com/wp-content/uploads/2016/06/code4ct-logo-1.jpg" alt="">
+
+      <div class="box a">
+        <a class="home" href="Home.html"/target="_self">Home</a>
+        <a class="about" href="About.html"/target="_self">About</a>
+        <a class="courses" href="#"/target="_self">Courses</a>
+        <a class="Portfolio"a href="portfolio.html"/target="_self">Portfolio</a>
+        <a class="contact"a href="Contact.html"/target="_self">Contact</a>
+        <input type="text" name="" placeholder="Search"></div>
+
+      </div>
+    </div>
+
+  <div class="container">
+    <div class="products">
+      <!-- comment -->
+    </div>
+
+    <div class="shopping-cart">
+      <div class="shopping-cart-head">
+        <span class="product-quantity">0</span> Product(s) in Cart
+      </div>
+      <ul class="shopping-cart-list">
+      </ul>
+      <div class="cart-buttons">
+        <a href="#0" class="button empty-cart-btn">Empty</a>
+        <a href="#0" class="button cart-checkout">Checkout - <span class="total-price">R0</span></a>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+  var ShoppingCart = (function($) {
+    "use strict";
+
+    // comment
+    var productsEl = document.querySelector(".products"),
+    cartEl =     document.querySelector(".shopping-cart-list"),
+    productQuantityEl = document.querySelector(".product-quantity"),
+    emptyCartEl = document.querySelector(".empty-cart-btn"),
+    cartCheckoutEl = document.querySelector(".cart-checkout"),
+    totalPriceEl = document.querySelector(".total-price");
+
+    // comment
+    var products = [
+      {
+        id: 0,
+        name: "Beginner JavaScript",
+        description: "Develop a basic proficiency in programming structures and methods in JavaScript so that you are able to create an interactive web application.",
+        imageUrl: "",
+        price: 1800
+      },
+      {
+        id: 1,
+        name: "Beginner Front End Web Development",
+        description: "Develop a good proficiency in CSS and an understanding of web design principles so that you are able to create visually pleasing web pages.",
+        imageUrl: "",
+        price: 1800,
+      },
+      {
+        id: 2,
+        name: "Innovation Challenge",
+        description: "Work in groups to design an innovative solution to a social issue by using the design thinking process.",
+        imageUrl: "",
+        price: 750
+      },
+      {
+        id: 3,
+        name: "CodeStorm",
+        description: "Work in groups to create and present a code project that addresses a particular issue. .",
+        imageUrl: "",
+        price: 1500
+      },
+      {
+        id: 4,
+        name: "Code Conversation",
+        description: "Learn about tech careers from a panel of working professionals who will share their experiences with you..",
+        imageUrl: "",
+        price: 300
+      },
+      {
+        id: 5,
+        name: "Presentation Skills",
+        description: "Learn how to present an idea or project in a compelling manner. ",
+        imageUrl: "",
+        price: 300
+      }
+    ],
+    productsInCart = [];
+
+
+    // new messages
+
+    // comment
+    var generateProductList = function() {
+      products.forEach(function(item) {
+        var productEl = document.createElement("div");
+        productEl.className = "product";
+        productEl.innerHTML = `<div class="product-image">
+        <img src="${item.imageUrl}" alt="${item.name}">
+        </div>
+        <div class="product-name"><span>Product:</span> ${item.name}</div>
+        <div class="product-description"><span>Description:</span> ${item.description}</div>
+        <div class="product-price"><span>Price:</span> R${item.price} </div>
+        <div class="product-add-to-cart">
+        <a href="#0" class="button add-to-cart" data-id=${item.id}>Add to Cart</a>
+        </div>
+        </div>
+        `;
+
+        productsEl.appendChild(productEl);
+      });
+    }
+
+    // comment
+    var generateCartList = function() {
+
+      cartEl.innerHTML = "";
+
+      productsInCart.forEach(function(item) {
+        var li = document.createElement("li");
+        li.innerHTML = `${item.quantity} ${item.product.name} - R${item.product.price * item.quantity}`;
+        cartEl.appendChild(li);
+      });
+
+      productQuantityEl.innerHTML = productsInCart.length;
+
+      generateCartButtons()
+    }
+
+
+    // comment
+    var generateCartButtons = function() {
+      if(productsInCart.length > 0) {
+        emptyCartEl.style.display = "block";
+        cartCheckoutEl.style.display = "block"
+        totalPriceEl.innerHTML = "R " + calculateTotalPrice();
+      } else {
+        emptyCartEl.style.display = "none";
+        cartCheckoutEl.style.display = "none";
+      }
+    }
+
+    // comment
+    var setupListeners = function() {
+      productsEl.addEventListener("click", function(event) {
+        var el = event.target;
+        if(el.classList.contains("add-to-cart")) {
+          var elId = el.dataset.id;
+          addToCart(elId);
+        }
+      });
+
+      emptyCartEl.addEventListener("click", function(event) {
+        if(confirm("Are you sure?")) {
+          productsInCart = [];
+        }
+        generateCartList();
+      });
+    }
+
+    // comment
+    var addToCart = function(id) {
+      var obj = products[id];
+      if(productsInCart.length === 0 || productFound(obj.id) === undefined) {
+        productsInCart.push({product: obj, quantity: 1});
+      } else {
+        productsInCart.forEach(function(item) {
+          if(item.product.id === obj.id) {
+            item.quantity++;
+          }
+        });
+      }
+      generateCartList();
+    }
+
+
+    // comment
+    var productFound = function(productId) {
+      return productsInCart.find(function(item) {
+        return item.product.id === productId;
+      });
+    }
+
+    var calculateTotalPrice = function() {
+      return productsInCart.reduce(function(total, item) {
+        return total + (item.product.price *  item.quantity);
+      }, 0);
+    }
+
+    // comment
+    var init = function() {
+      generateProductList();
+      setupListeners();
+    }
+
+    // comment
+    return {
+      init: init
+    };
+
+    // comment
+  })(jQuery);
+
+  ShoppingCart.init();
+  </script>
+</body>
+</html>
