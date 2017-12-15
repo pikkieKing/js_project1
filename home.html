@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="JS/partnersSlider.js"></script>
   <script src="jquery-circle-progress"></script>
   <style media="screen">
   body{
@@ -68,8 +69,8 @@
 #carousel_ul li img {
 width: 100%;
 height: 110px;
-}*/
-.circle {
+}
+ .circle {
    width: 50px;
    margin: 6px 20px 20px;
    display: inline-block;
@@ -78,7 +79,7 @@ height: 110px;
 
  }
  /*this is the text*/
- strong {
+  strong {
    position: absolute;
    top: 30px;
    left: 45px;
@@ -235,25 +236,24 @@ height: 110px;
 
   <div class="wrapper">
     <div class="Topnav">
-      <img src="http://code4ct.com/wp-content/uploads/2016/06/code4ct-logo-1.jpg" alt="Code for Cape Town Logo" width="20%" height="100%" style="float:left;">
+      <img src="http://code4ct.com/wp-content/uploads/2016/06/code4ct-logo-1.jpg" alt="">
 
-      <div id="header">
-        <ul>
-          <li><a class="home" href="#"/target="_self">Home</a></li>
-        <li><a class="courses" href="Courses.html"/target="_self">Courses</a></li>
-        <li><a class="about" href="About.html"/target="_self">About</a></li>
-        <li><a class="Portfolio"a href="Portfolio.html"/target="_self">Portfolio</a></li>
-        <li><a class="contact"a href="Contact.html"/target="_self">Contact</a></li>
-      </ul>
-        <input type="text" name="Search" placeholder="Search" style="margin-top:2%;"></div>
+      <div class="box a">
+        <a class="home" href="#"/target="_self">Home</a>
+        <a class="courses" href="Courses.html"/target="_self">Courses</a>
+        <a class="about" href="About.html"/target="_self">About</a>
+        <a class="Portfolio"a href="Portfolio.html"/target="_self">Portfolio</a>
+        <a class="contact"a href="Contact.html"/target="_self">Contact</a>
+        <input type="text" name="" placeholder="Search">
+      <button style="float:right;margin-right:220px;margin-top:21px;"><i style="font-size:12.5px;color:indianred;" class="fa">&#xf002;</i></button>
 
-      </div>
+    </div>
     </div>
 
     <!--end of top nav bar-->
 
-    <div class="Slide"><img src="Images\untitled-0932.jpg" alt="" width="100%" height="550px">
-
+    <div class="Slide">
+      <img src="Images\untitled-0932.jpg" alt="" width="100%" height="550px">
     </div>
 
     <!--about the company-->
@@ -383,7 +383,7 @@ height: 110px;
           <p>Sign up for our newsletter</p>
           <form>
             <input type="text" name="" value=""placeholder="enter your email">
-            <button>Submit</button>
+            <button id="#sub_button">Submit</button>
           </center>
 
         </form>
@@ -394,7 +394,7 @@ height: 110px;
 
     <!--start of carousel section-->
 
-    <!-- <div id='carousel_container'>
+    <div id='carousel_container'>
       <div id='carousel_inner'>
         <ul id='carousel_ul'>
           <li>
@@ -437,93 +437,57 @@ height: 110px;
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>
 
   <!--end of carousel section-->
 
   <!--page footer-->
 
-  <footer>
-    <div id="PartnerSlider">
-      <ul id="slides">
-        <li class="slide showing"><img src="Images/Logos/45_case_study_logos_11_csg.jpg" alt="" height="100%" width="100%"></li>
-        <li class="slide"><img src="Images/Logos/deloitte-logo.png" alt="" height="100%" width="100%"></li>
-        <li class="slide"><img src="Images/Logos/lwandlelogo.png" alt="" height="100%" width="100%"></li>
-        <li class="slide"><img src="Images/Logos/mazars-logo.png" alt="" height="100%" width="100%"></li>
-        <li class="slide"><img src="Images/Logos/Mobenzi_logo.png" alt="" height="100%" width="100%"></li>
-        <li class="slide"><img src="Images/Logos/openboxlogo.png" alt="" height="100%" width="100%"></li>
-        <li class="slide"><img src="Images/Logos/Takealot-logo.png" alt="" height="100%" width="100%"></li>
-        <li class="slide"><img src="Images/Logos/TNS-logo.png" alt="" height="100%" width="100%"></li>
+  <div class="container">
+
+    <div class="footer_legal">
+      <h4>Legal</h4>
+      Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)
+
+    </div>
+    <div class="footer_company">
+      <ul>
+        <H4>Company</H4>
+        <li>About us</li>
+        <li>contact us</li>
+        <li>Blog</li>
+        <li>Testimonials</li>
+        <li>Affliate programs</li>
       </ul>
-    </div>
-    <div id="ExtraInfo">
-      <div id="MoreInfo">
-        <div id="Legal">
-          <h4 style="font-weight:600; margin-bottom:2%;">Legal</h4>
-          <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
-        </div>
-        <div id="Company">
-          <h4 style="font-weight:600; margin-bottom:2%;">Company</h4>
-          <ul style="margin-top:0px;">
-            <li>About</li>
-            <li>Contact Us</li>
-            <li>Blog</li>
-            <li>Testimonials</li>
-            <li>Donate</li>
-          </ul>
-        </div>
-        <div id="Help">
-          <h4 style="font-weight:600; margin-bottom:2%;">Help & Support</h4>
-          <ul style="margin-top:0px;">
-            <li>Help Centre</li>
-            <li>Free</li>
-            <li>Refund</li>
-            <li>Report</li>
-          </ul>
-        </div>
-        <div id="Address">
-          <h4 style="font-weight:600; margin-bottom:2%;">Contact us on: </h4>
-          <table style="width:100%">
-            <tr>
-              <td style="border: 1px solid grey"><i class="fa fa-phone"></i></td>
-              <td style="text-align:left; padding-left:2%;">021 685 0991</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid grey"><i class="fa fa-envelope"></i></td>
-              <td style="text-align:left; padding-left:2%;"><a href="mailto:info@code4ct.com">info@code4ct.com</a></td>
-            </tr>
-            <tr>
-              <td  rowspan="1" style="border: 1px solid grey; height: 18px; pad"><i class="fa fa-map-marker"></i></td>
-              <td rowspan="3" style="text-align:left; padding-left:2%;">Innovate South Africa, <br>403 Old Castle Brewery, <br>6 Beach Rd, Woodstock, <br>Cape Town, 7915</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
 
-    <div id="SocialBar">
-      <p style="float:left; margin-left:2%; margin-top:0.5%; padding-left: 10%;" ><small>copyright &copy; 2017 PRIVACY POLICY</small></p>
-      <ul style="float:right; margin-top:0.5%; margin-right:3%;">
-        <li>Follow Us:<li>
-        <li><a href="https://www.facebook.com/code4ct/" title="fa fa-facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="https://twitter.com/code4ct?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" title="fa fa-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="https://www.instagram.com/missmegymegs/?hl=en" title="fa fa-pinterest-p" target="_blank"><i class="fa fa-pinterest-p"></i></a></li>
-        <li><a href="https://plus.google.com/117615612107853378938" title="fa fa-google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="https://www.linkedin.com/company/9414552/" title="fa fa-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-      </ul>
     </div>
-  </footer>
+    <div class="footer_Help">
+      <h4>Help & support</h4>
+      <li>Help center</li>
+      <li>Free Simple template</li>
+      <li>Refund Policy</li>
+      <li>Report spam</li>
+
+    </div>
+    <div class="footer_Contact">
+      <img src="Images\Logos\phoneicon.svg" alt=""width="15px"height="15px"style="float:left;padding-right:10px;"><p> 021 685 0991</p>
+      <img src="Images\Logos\12194.svg" alt=""width="10px"height="10px"style="float:left;padding-right:10px;"><p>info@code4ct.com</p>
+      <img src="Images\Logos\timeicon.png" alt=""width="10px"height="10px"style="float:left;padding-right:10px;"><p>Mon-fri09.00-12.00</p>
+      <img src="Images\Logos\450016.jpg" alt=""width="10px"height="10px"style="float:left;padding-right:10px;"><p>Innovate South Africa,403 Old Castle Brewery, 6 Beach Rd,Woodstock, Cape Town, 7915</p>
+
+    </div>
+    <div class="footer">
+      Copyright (c) 2017 Copyright Holder All Rights Reserved.
+    </div>
+    <div class="Social_media">
+      follow us: <img src="Images\Logos\facebook.png" alt=""width="20px"height="20px"><img src="Images\Logos\twitter.png" alt=""width="20px"height="20px"><img src="Images\Logos\pinterest.png" alt=""width="20px"height="20px"><img src="Images\Logos\google-plus.png"alt=""width="20px"height="20px">
+      <img src="Images\Logos\linkedin.png" alt=""width="20px"height="20px"><img src="Images\Logos\skype.png" alt=""width="20px"height="20px">
+
+    </div>
+  </div>
 
 
-  <script
+
   <script type="text/javascript">
   var progressBarOptions = {
      startAngle: -1.55,

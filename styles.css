@@ -1,8 +1,6 @@
 body {
-  /*margin: 15px;*/
-  width: 100%;
-  height: 100%;
-  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+
 }
 
 
@@ -16,6 +14,7 @@ body {
 .Topnav a{
   color: gray;
   text-decoration: none;
+  font-size: 40px;
   font-family: 'Lato',sans-serif;
 }
 
@@ -24,27 +23,12 @@ body {
   background-repeat: no-repeat;
   background-size:contain;
   padding: 3px;
+  word-spacing: 50px;
+  color: rgba(, 0, 0, 0,.6);
   position: fixed;
   width: 100%;
   top: 0;
-}
-
-#header {
-  width: 76%;
-  float: left;
-}
-
-#header ul {
-  list-style-type: none;
-  width: 60%;
-  padding: 0%;
-  float: left;
-  text-align:center;
-}
-
-#header li{
-  display: inline;
-  margin: 2%;
+  z-index: 1;
 }
 
 
@@ -116,7 +100,7 @@ iframe{
 }
 
 
-button{
+#sub_button{
   background-color: #f44242;
   margin: 10px;
 }
@@ -129,127 +113,7 @@ button{
   height:2000px;
 }
 
-footer{
-  clear: both;
-  background-color: white;
-}
 
-#PartnerSlider{
-  height: 150px;
-  background-color: black;
-  overflow: hidden;
-  float: left;
-  width: 100%;
-}
-
-#slides {
-    position: relative;
-    width: 100%;
-    height: 120px;
-    padding-top: 1%;
-    margin: 0px;
-    list-style-type: none;
-    overflow: hidden;
-    display: inline-flex;
-}
-
-#slides li{
-  width: 100%;
-  margin: 0;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-}
-
-#Blocker1{
-  width: 26%;
-  background-color: black;
-  height: 150px;
-  position: absolute;
-}
-
-#Blocker2{
-  width: 24%;
-  background-color: black;
-  height: 150px;
-  position: absolute;
-  right: 0;
-}
-
-
-#Legal{
-  width: 24%;
-  float: left;
-}
-
-#ExtraInfo{
-  height: 200px;
-  width: 100%;
-  background-color: white;
-  clear: both;
-}
-
-#MoreInfo{
-  padding: 0% 9%;
-  float:left;
-}
-
-#MoreInfo ul{
-  list-style-type: square;
-  list-style-position:inside;
-  text-align:left;
-  width: 100%;
-}
-
-#MoreInfo li{
-  display: list-item;
-}
-
-#Legal{
-  Width: 30%;
-  float:left;
-}
-
-#Company{
-  float:left;
-  width: 16%;
-  margin-left:3%;
-}
-
-#Help{
-  float:left;
-  width: 16%;
-  margin-left:1%;
-  margin-right:3%;
-}
-
-#Address{
-  Width: 30%;
-  float:left;
-}
-
-#Address p{
-  margin: 8px;
-}
-
-#SocialBar{
-  color: white;
-  text-align: center;
-  background-color: #e38f84;
-  width: 100%;
-  height: inherit;
-  height: 40px;
-}
-
-#SocialBar ul{
-  width: 40%;
-}
-
-#SocialBar li{
-  margin: 0.5%;
-}
-
-#SocialBar li a{
-  color: white;
+.container_welcome{
+  padding-top: 250px;
 }
